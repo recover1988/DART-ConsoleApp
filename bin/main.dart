@@ -9,11 +9,12 @@ void main(List<String> arguments) async {
   // final url = Uri.https('reqres.in', 'api/users?page=2');
   // final response = await http.get(url);
   // print(jsonDecode(response.body));
+
   http.get(url).then((res) {
     // print(res.statusCode);
     final body = jsonDecode(res.body);
     print('page: ${body['page']}');
     print('per_page:  ${body['per_page']}');
-    print('id del tercer elemento:  ${body['data'][2]}');
+    print('id del tercer elemento:  ${body['data'][2]['id']}');
   });
 }
